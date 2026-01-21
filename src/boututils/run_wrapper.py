@@ -226,7 +226,7 @@ def launch(
         cmd = f"{cmd} > {output}"
 
     # Set OMP_NUM_THREADS if mthread is provided (for OpenMP in BOUT++)
-    env = dict(os.environ)
+    env = os.environ.copy()
     if mthread:
         env["OMP_NUM_THREADS"] = str(mthread)
 
