@@ -53,7 +53,7 @@ def shell(command, pipe=False, env=None):
     )
     output = result.stdout if pipe else ""
     if result.stderr:
-        output += "\nSTDERR:\n" + result.stderr
+        output = f"{output}\nSTDERR:\n{result.stderr}"
     return result.returncode, output
 
 
